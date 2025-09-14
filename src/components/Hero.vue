@@ -71,46 +71,26 @@ const scrollToContact = () => {
               <span class="window-title">UniversalRequestTracker.cs</span>
             </div>
             <div class="code-content">
-              <pre><code>// Universal Request Tracker для микросервисной архитектуры
+              <pre><code>// Микросервисная архитектура с Correlation ID
 public class UniversalRequestTracker : IUniversalRequestTracker
 {
+    // Thread-safe коллекция для отслеживания асинхронных запросов
     private readonly ConcurrentDictionary&lt;string, TaskCompletionSource&lt;object&gt;&gt; _pendingRequests = new();
-    private readonly JsonSerializerOptions _jsonOptions;
 
-    public string CreatePendingRequest()
-    {
-        var correlationId = Guid.NewGuid().ToString();
-        var tcs = new TaskCompletionSource&lt;object&gt;(
-            TaskCreationOptions.RunContinuationsAsynchronously);
-        
-        if (!_pendingRequests.TryAdd(correlationId, tcs))
-            throw new InvalidOperationException($"Request with ID {correlationId} already exists");
-        
-        _ = Task.Delay(TimeSpan.FromSeconds(30))
-              .ContinueWith(_ => 
-              {
-                  if (_pendingRequests.TryRemove(correlationId, out var timeoutTcs))
-                      timeoutTcs.TrySetException(new TimeoutException("Response timeout exceeded"));
-              });
-              
-        return correlationId;
-    }
-
+    /// &lt;summary&gt;
+    /// Ожидает ответ на запрос по Correlation ID с автоматической десериализацией
+    /// &lt;/summary&gt;
     public async Task&lt;T&gt; WaitForResponseAsync&lt;T&gt;(string correlationId)
     {
-        if (!_pendingRequests.TryGetValue(correlationId, out var tcs))
-            throw new KeyNotFoundException($"Request with ID {correlationId} not found");
-
-        var result = await tcs.Task;
+        // Получаем результат асинхронной операции
+        var result = await _pendingRequests[correlationId].Task;
         
+        // Pattern matching для автоматического преобразования типов
         return result switch
         {
-            T typedResult => typedResult,
-            string jsonString => JsonSerializer.Deserialize&lt;T&gt;(jsonString, _jsonOptions) 
-                ?? throw new InvalidOperationException("Deserialization returned null"),
-            byte[] byteData => JsonSerializer.Deserialize&lt;T&gt;(Encoding.UTF8.GetString(byteData), _jsonOptions)
-                ?? throw new InvalidOperationException("Deserialization returned null"),
-            _ => throw new InvalidCastException($"Cannot convert {result.GetType().Name} to {typeof(T).Name}")
+            T typedResult => typedResult,                    // Уже нужного типа
+            string jsonString => JsonSerializer.Deserialize&lt;T&gt;(jsonString), // JSON строка
+            _ => throw new InvalidCastException()            // Неподдерживаемый тип
         };
     }
 }</code></pre>
