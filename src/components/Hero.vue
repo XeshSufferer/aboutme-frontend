@@ -128,6 +128,8 @@ public async Task StartGame(MathTaskGeneratorSettings settings)
     radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.3) 0%, transparent 50%),
     radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.2) 0%, transparent 50%);
   overflow: hidden;
+  width: 100%;
+  max-width: 100vw;
 }
 
 .hero-container {
@@ -135,6 +137,7 @@ public async Task StartGame(MathTaskGeneratorSettings settings)
   margin: 0 auto;
   padding: 0 20px;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .hero-content {
@@ -254,6 +257,9 @@ public async Task StartGame(MathTaskGeneratorSettings settings)
   text-decoration: none;
   position: relative;
   overflow: hidden;
+  box-sizing: border-box;
+  min-height: 48px;
+  touch-action: manipulation;
 }
 
 .btn-primary {
@@ -465,146 +471,96 @@ public async Task StartGame(MathTaskGeneratorSettings settings)
   }
 }
 
-@media (max-width: 768px) {
-  .hero {
-    min-height: 100vh;
-    padding: 80px 0 40px;
-  }
-  
-  .hero-container {
-    padding: 0 20px;
-  }
-  
+@media (max-width: 900px) {
   .hero-content {
-    grid-template-columns: 1fr;
     gap: 40px;
-    text-align: center;
-  }
-  
-  .hero-text {
-    order: 1;
-  }
-  
-  .hero-visual {
-    order: 2;
-  }
-  
-  .greeting {
-    font-size: 1.3rem;
-    margin-bottom: 8px;
   }
   
   .name {
     font-size: 2.8rem;
-    margin-bottom: 12px;
   }
   
   .role {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     padding: 12px 24px;
-    margin-bottom: 16px;
-  }
-  
-  .hero-description {
-    font-size: 1.1rem;
-    margin-bottom: 35px;
-    line-height: 1.5;
   }
   
   .hero-stats {
-    justify-content: center;
-    gap: 25px;
-    margin-bottom: 35px;
-    flex-wrap: wrap;
-  }
-  
-  .stat {
-    min-width: 80px;
+    gap: 30px;
   }
   
   .stat-number {
     font-size: 2rem;
   }
-  
-  .stat-label {
-    font-size: 0.8rem;
-  }
-  
-  .hero-actions {
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-  }
-  
-  .btn {
-    width: 100%;
-    max-width: 280px;
-    justify-content: center;
-    padding: 14px 28px;
-    font-size: 0.95rem;
-  }
-  
-  .code-window {
-    margin: 0 auto;
-    max-width: 100%;
-  }
-  
-  .window-header {
-    padding: 12px 16px;
-  }
-  
-  .code-content {
-    padding: 16px;
-  }
-  
-  .code-content pre {
-    font-size: 0.8rem;
-    line-height: 1.4;
-  }
-  
-  .floating-elements {
-    display: none;
-  }
-  
-  .scroll-indicator {
-    bottom: 20px;
-  }
-  
-  .scroll-indicator span {
-    font-size: 0.8rem;
-  }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .hero {
+    min-height: 100vh;
     padding: 60px 0 30px;
+    overflow-x: hidden;
   }
   
   .hero-container {
-    padding: 0 15px;
+    padding: 0 16px;
+    max-width: 100%;
+  }
+  
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .hero-text {
+    order: 1;
+    width: 100%;
+  }
+  
+  .hero-visual {
+    order: 2;
+    width: 100%;
   }
   
   .greeting {
     font-size: 1.2rem;
+    margin-bottom: 6px;
   }
   
   .name {
     font-size: 2.4rem;
+    margin-bottom: 10px;
+    line-height: 1.1;
   }
   
   .role {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     padding: 10px 20px;
+    margin-bottom: 14px;
+    display: inline-block;
+    max-width: 100%;
+    word-wrap: break-word;
   }
   
   .hero-description {
     font-size: 1rem;
     margin-bottom: 30px;
+    line-height: 1.5;
+    padding: 0 10px;
   }
   
   .hero-stats {
+    justify-content: center;
     gap: 20px;
     margin-bottom: 30px;
+    flex-wrap: wrap;
+  }
+  
+  .stat {
+    min-width: 70px;
+    flex: 1;
+    max-width: 100px;
   }
   
   .stat-number {
@@ -613,16 +569,28 @@ public async Task StartGame(MathTaskGeneratorSettings settings)
   
   .stat-label {
     font-size: 0.75rem;
+    line-height: 1.2;
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 0 10px;
   }
   
   .btn {
+    width: 100%;
     max-width: 260px;
+    justify-content: center;
     padding: 12px 24px;
     font-size: 0.9rem;
   }
   
-  .code-content pre {
-    font-size: 0.75rem;
+  .code-window {
+    margin: 0 auto;
+    max-width: 100%;
+    width: 100%;
   }
   
   .window-header {
@@ -630,39 +598,216 @@ public async Task StartGame(MathTaskGeneratorSettings settings)
   }
   
   .code-content {
-    padding: 14px;
+    padding: 12px;
+    overflow-x: auto;
+  }
+  
+  .code-content pre {
+    font-size: 0.75rem;
+    line-height: 1.3;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+  
+  .floating-elements {
+    display: none;
+  }
+  
+  .scroll-indicator {
+    bottom: 15px;
+  }
+  
+  .scroll-indicator span {
+    font-size: 0.75rem;
   }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 480px) {
+  .hero {
+    padding: 50px 0 25px;
+    min-height: 100vh;
+  }
+  
   .hero-container {
     padding: 0 12px;
   }
   
+  .hero-content {
+    gap: 25px;
+  }
+  
+  .greeting {
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+  }
+  
   .name {
     font-size: 2.2rem;
+    margin-bottom: 8px;
+    line-height: 1.1;
   }
   
   .role {
-    font-size: 1.1rem;
+    font-size: 1rem;
     padding: 8px 16px;
+    margin-bottom: 12px;
+    line-height: 1.3;
   }
   
   .hero-description {
     font-size: 0.95rem;
+    margin-bottom: 25px;
+    padding: 0 5px;
+    line-height: 1.4;
+  }
+  
+  .hero-stats {
+    gap: 15px;
+    margin-bottom: 25px;
+  }
+  
+  .stat {
+    min-width: 60px;
+    max-width: 80px;
   }
   
   .stat-number {
     font-size: 1.6rem;
   }
   
+  .stat-label {
+    font-size: 0.7rem;
+    line-height: 1.1;
+  }
+  
+  .hero-actions {
+    gap: 10px;
+    padding: 0 5px;
+  }
+  
   .btn {
     max-width: 240px;
     padding: 10px 20px;
+    font-size: 0.85rem;
+  }
+  
+  .code-window {
+    border-radius: 12px;
+  }
+  
+  .window-header {
+    padding: 8px 12px;
+  }
+  
+  .code-content {
+    padding: 10px;
   }
   
   .code-content pre {
     font-size: 0.7rem;
+    line-height: 1.2;
+  }
+  
+  .scroll-indicator {
+    bottom: 10px;
+  }
+  
+  .scroll-indicator span {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero {
+    padding: 40px 0 20px;
+  }
+  
+  .hero-container {
+    padding: 0 10px;
+  }
+  
+  .hero-content {
+    gap: 20px;
+  }
+  
+  .greeting {
+    font-size: 1rem;
+    margin-bottom: 3px;
+  }
+  
+  .name {
+    font-size: 2rem;
+    margin-bottom: 6px;
+    line-height: 1.1;
+  }
+  
+  .role {
+    font-size: 0.95rem;
+    padding: 6px 12px;
+    margin-bottom: 10px;
+    line-height: 1.2;
+  }
+  
+  .hero-description {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    padding: 0 3px;
+    line-height: 1.3;
+  }
+  
+  .hero-stats {
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  
+  .stat {
+    min-width: 50px;
+    max-width: 70px;
+  }
+  
+  .stat-number {
+    font-size: 1.4rem;
+  }
+  
+  .stat-label {
+    font-size: 0.65rem;
+    line-height: 1.1;
+  }
+  
+  .hero-actions {
+    gap: 8px;
+    padding: 0 3px;
+  }
+  
+  .btn {
+    max-width: 220px;
+    padding: 8px 16px;
+    font-size: 0.8rem;
+  }
+  
+  .code-window {
+    border-radius: 10px;
+  }
+  
+  .window-header {
+    padding: 6px 10px;
+  }
+  
+  .code-content {
+    padding: 8px;
+  }
+  
+  .code-content pre {
+    font-size: 0.65rem;
+    line-height: 1.1;
+  }
+  
+  .scroll-indicator {
+    bottom: 8px;
+  }
+  
+  .scroll-indicator span {
+    font-size: 0.65rem;
   }
 }
 </style>
