@@ -434,39 +434,235 @@ public async Task StartGame(MathTaskGeneratorSettings settings)
 }
 
 /* Responsive */
+@media (max-width: 1024px) {
+  .hero-container {
+    padding: 0 30px;
+  }
+  
+  .hero-content {
+    gap: 50px;
+  }
+  
+  .name {
+    font-size: 3rem;
+  }
+  
+  .role {
+    font-size: 1.6rem;
+    padding: 14px 28px;
+  }
+  
+  .hero-stats {
+    gap: 35px;
+  }
+  
+  .stat-number {
+    font-size: 2.2rem;
+  }
+  
+  .code-content pre {
+    font-size: 0.85rem;
+  }
+}
+
 @media (max-width: 768px) {
+  .hero {
+    min-height: 100vh;
+    padding: 80px 0 40px;
+  }
+  
+  .hero-container {
+    padding: 0 20px;
+  }
+  
   .hero-content {
     grid-template-columns: 1fr;
     gap: 40px;
     text-align: center;
   }
   
+  .hero-text {
+    order: 1;
+  }
+  
+  .hero-visual {
+    order: 2;
+  }
+  
+  .greeting {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+  }
+  
   .name {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
+    margin-bottom: 12px;
   }
   
   .role {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
+    padding: 12px 24px;
+    margin-bottom: 16px;
+  }
+  
+  .hero-description {
+    font-size: 1.1rem;
+    margin-bottom: 35px;
+    line-height: 1.5;
   }
   
   .hero-stats {
     justify-content: center;
-    gap: 30px;
+    gap: 25px;
+    margin-bottom: 35px;
+    flex-wrap: wrap;
+  }
+  
+  .stat {
+    min-width: 80px;
+  }
+  
+  .stat-number {
+    font-size: 2rem;
+  }
+  
+  .stat-label {
+    font-size: 0.8rem;
   }
   
   .hero-actions {
     flex-direction: column;
     align-items: center;
+    gap: 15px;
   }
   
   .btn {
     width: 100%;
-    max-width: 300px;
+    max-width: 280px;
     justify-content: center;
+    padding: 14px 28px;
+    font-size: 0.95rem;
+  }
+  
+  .code-window {
+    margin: 0 auto;
+    max-width: 100%;
+  }
+  
+  .window-header {
+    padding: 12px 16px;
+  }
+  
+  .code-content {
+    padding: 16px;
+  }
+  
+  .code-content pre {
+    font-size: 0.8rem;
+    line-height: 1.4;
   }
   
   .floating-elements {
     display: none;
+  }
+  
+  .scroll-indicator {
+    bottom: 20px;
+  }
+  
+  .scroll-indicator span {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 60px 0 30px;
+  }
+  
+  .hero-container {
+    padding: 0 15px;
+  }
+  
+  .greeting {
+    font-size: 1.2rem;
+  }
+  
+  .name {
+    font-size: 2.4rem;
+  }
+  
+  .role {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+  }
+  
+  .hero-description {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+  
+  .hero-stats {
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .stat-number {
+    font-size: 1.8rem;
+  }
+  
+  .stat-label {
+    font-size: 0.75rem;
+  }
+  
+  .btn {
+    max-width: 260px;
+    padding: 12px 24px;
+    font-size: 0.9rem;
+  }
+  
+  .code-content pre {
+    font-size: 0.75rem;
+  }
+  
+  .window-header {
+    padding: 10px 14px;
+  }
+  
+  .code-content {
+    padding: 14px;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-container {
+    padding: 0 12px;
+  }
+  
+  .name {
+    font-size: 2.2rem;
+  }
+  
+  .role {
+    font-size: 1.1rem;
+    padding: 8px 16px;
+  }
+  
+  .hero-description {
+    font-size: 0.95rem;
+  }
+  
+  .stat-number {
+    font-size: 1.6rem;
+  }
+  
+  .btn {
+    max-width: 240px;
+    padding: 10px 20px;
+  }
+  
+  .code-content pre {
+    font-size: 0.7rem;
   }
 }
 </style>
