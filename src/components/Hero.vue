@@ -429,9 +429,9 @@ public class UniversalRequestTracker : IUniversalRequestTracker
   content: '';
   position: absolute;
   bottom: 0;
-  left: -4px;
-  width: 10px;
-  height: 10px;
+  left: -3px;
+  width: 8px;
+  height: 8px;
   border-right: 2px solid rgba(255, 255, 255, 0.5);
   border-bottom: 2px solid rgba(255, 255, 255, 0.5);
   transform: rotate(45deg);
@@ -443,9 +443,15 @@ public class UniversalRequestTracker : IUniversalRequestTracker
 }
 
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
-  40% { transform: translateX(-50%) translateY(-10px); }
-  60% { transform: translateX(-50%) translateY(-5px); }
+  0%, 20%, 50%, 80%, 100% { 
+    transform: translateX(-50%) translateY(0); 
+  }
+  40% { 
+    transform: translateX(-50%) translateY(-8px); 
+  }
+  60% { 
+    transform: translateX(-50%) translateY(-4px); 
+  }
 }
 
 /* Responsive */
