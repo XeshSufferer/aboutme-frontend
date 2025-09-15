@@ -84,7 +84,7 @@ const openLink = (url: string) => {
           © 2025 ByXesh. Все права защищены.
         </p>
         <p class="footer-subtext">
-          Vibecoded by By Xesh ❤️
+          Vibecoded by ByXesh ❤️
         </p>
       </div>
     </div>
