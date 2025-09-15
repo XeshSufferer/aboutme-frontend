@@ -53,10 +53,6 @@ const scrollToContact = () => {
               <span>Связаться со мной</span>
               <span class="btn-icon">📧</span>
             </button>
-            <button class="btn btn-secondary">
-              <span>Скачать CV</span>
-              <span class="btn-icon">📄</span>
-            </button>
           </div>
         </div>
         
@@ -512,7 +508,7 @@ public class UniversalRequestTracker : IUniversalRequestTracker
 @media (max-width: 768px) {
   .hero {
     min-height: 100vh;
-    padding: 60px 0 30px;
+    padding: 90px 0 120px;
     overflow-x: hidden;
   }
   
@@ -524,13 +520,14 @@ public class UniversalRequestTracker : IUniversalRequestTracker
   .hero-content {
     grid-template-columns: 1fr;
     gap: 30px;
-    text-align: center;
+    text-align: left;
     width: 100%;
   }
   
   .hero-text {
     order: 1;
     width: 100%;
+    margin-top: 10px;
   }
   
   .hero-visual {
@@ -566,7 +563,7 @@ public class UniversalRequestTracker : IUniversalRequestTracker
   }
   
   .hero-stats {
-    justify-content: center;
+    justify-content: flex-start;
     gap: 20px;
     margin-bottom: 30px;
     flex-wrap: wrap;
@@ -589,7 +586,7 @@ public class UniversalRequestTracker : IUniversalRequestTracker
   
   .hero-actions {
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     gap: 12px;
     padding: 0 10px;
   }
@@ -597,13 +594,13 @@ public class UniversalRequestTracker : IUniversalRequestTracker
   .btn {
     width: 100%;
     max-width: 260px;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 12px 24px;
     font-size: 0.9rem;
   }
   
   .code-window {
-    margin: 0 auto;
+    margin: 0;
     max-width: 100%;
     width: 100%;
   }
@@ -639,7 +636,7 @@ public class UniversalRequestTracker : IUniversalRequestTracker
 
 @media (max-width: 480px) {
   .hero {
-    padding: 50px 0 25px;
+    padding: 70px 0 110px;
     min-height: 100vh;
   }
   
@@ -734,7 +731,7 @@ public class UniversalRequestTracker : IUniversalRequestTracker
 
 @media (max-width: 360px) {
   .hero {
-    padding: 40px 0 20px;
+    padding: 60px 0 100px;
   }
   
   .hero-container {

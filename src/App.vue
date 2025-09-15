@@ -79,19 +79,19 @@ section {
 
 /* Градиентные фоны для секций */
 #hero {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #3730a3 0%, #3b0764 100%);
 }
 
 #about {
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  background: linear-gradient(135deg, #6b21a8 0%, #7f1d1d 100%);
 }
 
 #projects {
-  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  background: linear-gradient(135deg, #1d4ed8 0%, #0e7490 100%);
 }
 
 #contact {
-  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  background: linear-gradient(135deg, #065f46 0%, #0f766e 100%);
 }
 
 /* Анимации */

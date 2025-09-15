@@ -76,28 +76,12 @@ const openLink = (url: string) => {
             </div>
           </div>
           
-          <div class="social-links">
-            <h4>Социальные сети</h4>
-            <div class="social-grid">
-              <a 
-                v-for="social in socialLinks" 
-                :key="social.name"
-                :href="social.url"
-                target="_blank"
-                class="social-link"
-                :style="{ '--social-color': social.color }"
-              >
-                <span class="social-icon">{{ social.icon }}</span>
-                <span class="social-name">{{ social.name }}</span>
-              </a>
-            </div>
-          </div>
         </div>
       </div>
       
       <div class="contact-footer" :class="{ 'visible': isVisible }">
         <p class="footer-text">
-          © 2024 By Xesh. Все права защищены.
+          © 2025 ByXesh. Все права защищены.
         </p>
         <p class="footer-subtext">
           Vibecoded by By Xesh ❤️
