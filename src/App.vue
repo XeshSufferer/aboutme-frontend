@@ -1,4 +1,5 @@
 <script setup lang="ts">
+<<<<<<< HEAD
 import { ref, onMounted } from 'vue'
 import Navigation from './components/Navigation.vue'
 import Hero from './components/Hero.vue'
@@ -135,3 +136,33 @@ section {
   }
 }
 </style>
+=======
+import ProfileHeader from '@/components/ProfileHeader.vue'
+import WeatherTimeCard from '@/components/WeatherTimeCard.vue'
+import SkillsCard from '@/components/SkillsCard.vue'
+import ProjectCard from '@/components/ProjectCard.vue'
+</script>
+
+<template>
+  <div class="container">
+    <ProfileHeader />
+
+    <main class="grid">
+      <div class="stack">
+        <WeatherTimeCard />
+        <SkillsCard />
+      </div>
+
+      <div class="stack">
+        <ProjectCard />
+      </div>
+    </main>
+
+    <div class="footerNote">
+      <!--Контент редактируется в <code>src/content/portfolio.ts</code>-->
+    </div>
+  </div>
+</template>
+
+<style scoped></style>
+>>>>>>> 6dd4a93 (remake)

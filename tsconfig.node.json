@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "extends": "@tsconfig/node22/tsconfig.json",
+=======
+  "extends": "@tsconfig/node24/tsconfig.json",
+>>>>>>> 6dd4a93 (remake)
   "include": [
     "vite.config.*",
     "vitest.config.*",

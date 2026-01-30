@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "learn",
   "version": "0.0.0",
   "private": true,
@@ -6,6 +7,12 @@
   "engines": {
     "node": "^20.19.0 || >=22.12.0"
   },
+=======
+  "name": "portfolio-build",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+>>>>>>> 6dd4a93 (remake)
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
@@ -14,6 +21,7 @@
     "type-check": "vue-tsc --build"
   },
   "dependencies": {
+<<<<<<< HEAD
     "vue": "^3.5.18"
   },
   "devDependencies": {
@@ -26,5 +34,22 @@
     "vite": "^7.0.6",
     "vite-plugin-vue-devtools": "^8.0.0",
     "vue-tsc": "^3.0.4"
+=======
+    "vue": "^3.5.27"
+  },
+  "devDependencies": {
+    "@tsconfig/node24": "^24.0.4",
+    "@types/node": "^24.10.9",
+    "@vitejs/plugin-vue": "^6.0.3",
+    "@vue/tsconfig": "^0.8.1",
+    "npm-run-all2": "^8.0.4",
+    "typescript": "~5.9.3",
+    "vite": "^7.3.1",
+    "vite-plugin-vue-devtools": "^8.0.5",
+    "vue-tsc": "^3.2.4"
+  },
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+>>>>>>> 6dd4a93 (remake)
   }
 }

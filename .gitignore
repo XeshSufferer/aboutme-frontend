@@ -14,9 +14,12 @@ dist-ssr
 coverage
 *.local
 
+<<<<<<< HEAD
 /cypress/videos/
 /cypress/screenshots/
 
+=======
+>>>>>>> 6dd4a93 (remake)
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -28,3 +31,18 @@ coverage
 *.sw?
 
 *.tsbuildinfo
+<<<<<<< HEAD
+=======
+
+.eslintcache
+
+# Cypress
+/cypress/videos/
+/cypress/screenshots/
+
+# Vitest
+__screenshots__/
+
+# Vite
+*.timestamp-*-*.mjs
+>>>>>>> 6dd4a93 (remake)
